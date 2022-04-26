@@ -1,7 +1,6 @@
 #kill 1 - para resetar o replit
 #pip install pynacl
 import os
-from keep_alive import keep_alive
 from discord.ext import commands
 import discord
 import random
