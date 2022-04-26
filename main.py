@@ -91,6 +91,10 @@ async def on_message(message):
     if message.content.startswith("teste"):
       await message.author.send("I'm alive")
       print("funcionando")
+  
+  elif message.author.id == 594304718382170112:
+    if "amouranth" in message.content:
+      await message.author.send("Sai do Vicio Rapha")
 
   #elif message.author.id == 689976497364271205:
   #  await message.author.edit(nick = message.content)
