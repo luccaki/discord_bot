@@ -5,9 +5,6 @@ from discord.ext import commands
 import discord
 import random
 import pafy
-from flask import Flask
-
-application = Flask(__name__)
 
 bot = commands.Bot(command_prefix='')
         
@@ -103,8 +100,5 @@ async def on_message(message):
 
   #if message.author.id == 332525747749257216:
   #  await message.channel.send("**PRIMATA!**")
-
-if __name__ == "__main__":
-    application.run(host='localhost', debug=True)
      
 bot.run(os.environ.get('TOKEN'))
