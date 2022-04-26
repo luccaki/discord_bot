@@ -103,4 +103,4 @@ async def on_message(message):
   #  await message.channel.send("**PRIMATA!**")
 
 keep_alive()
-bot.run(os.environ['TOKEN'])
+bot.run(os.environ.get('TOKEN'))
