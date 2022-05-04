@@ -55,11 +55,11 @@ async def on_message(message):
   if message.author == client.user:
     return
   
-  if "@everyone" in message.content:
+  if message.mention_everyone:
     await message.delete()
     await message.channel.send("**PRIMATA!**")
 
-  elif "<@!840953718312009739>" in message.content:
+  elif "840953718312009739" in message.raw_mentions:
     if "?" in message.content:
       await message.channel.send("**CALA BOCA PRIMATA!**")
     else:
