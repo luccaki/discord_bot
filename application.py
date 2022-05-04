@@ -98,5 +98,6 @@ async def on_message(message):
 
   #if message.author.id == 332525747749257216:
   #  await message.channel.send("**PRIMATA!**")
-     
-client.run(os.environ.get('TOKEN'))
+
+if __name__ == "__main__":
+  client.run(os.environ.get('TOKEN'))
