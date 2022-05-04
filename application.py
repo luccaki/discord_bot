@@ -6,56 +6,56 @@ import discord
 import random
 import pafy
 
-bot = commands.Bot(command_prefix='')
+client = discord.Client()
         
-@bot.command()
-async def yt(ctx, url = "lxl388vKUmE"):
-  #If you want to use a youtube URL
-  if "/watch?v=" in url:
-    url = url[(url.index('/watch?v=')+9):(url.index('/watch?v=')+20)]
-  elif "youtu.be/" in url:
-    url = url[(url.index('youtu.be/')+9):(url.index('youtu.be/')+20)]
-  else:
-    url = "lxl388vKUmE"
+#@client.command()
+#async def yt(ctx, url = "lxl388vKUmE"):
+#  #If you want to use a youtube URL
+#  if "/watch?v=" in url:
+#    url = url[(url.index('/watch?v=')+9):(url.index('/watch?v=')+20)]
+#  elif "youtu.be/" in url:
+#    url = url[(url.index('youtu.be/')+9):(url.index('youtu.be/')+20)]
+#  else:
+#    url = "lxl388vKUmE"
+#
+#  #If you want to use a file
+#  #url = "audio.mp3"
+#  
+#  guild = ctx.guild
+#  song = pafy.new(url)
+#  audio = song.getbestaudio()
+#  audio_source = discord.FFmpegPCMAudio(audio.url)
+#  #audio_source = discord.FFmpegPCMAudio('vuvuzela.mp3')
+#  vc = ctx.message.author.voice.channel
+#  voice_client: discord.VoiceClient = discord.utils.get(client.voice_clients, guild=guild)
+#  if voice_client == None:
+#    await vc.connect()
+#    voice_client: discord.VoiceClient = discord.utils.get(client.voice_clients, guild=guild)
+#  elif vc != voice_client.channel:
+#    await voice_client.move_to(vc)
+#    voice_client: discord.VoiceClient = discord.utils.get(client.voice_clients, guild=guild)
+#  if not voice_client.is_playing():
+#    voice_client.play(audio_source, after=None)
+#  else:
+#    voice_client.stop()
 
-  #If you want to use a file
-  #url = "audio.mp3"
-  
-  guild = ctx.guild
-  song = pafy.new(url)
-  audio = song.getbestaudio()
-  audio_source = discord.FFmpegPCMAudio(audio.url)
-  #audio_source = discord.FFmpegPCMAudio('vuvuzela.mp3')
-  vc = ctx.message.author.voice.channel
-  voice_client: discord.VoiceClient = discord.utils.get(bot.voice_clients, guild=guild)
-  if voice_client == None:
-    await vc.connect()
-    voice_client: discord.VoiceClient = discord.utils.get(bot.voice_clients, guild=guild)
-  elif vc != voice_client.channel:
-    await voice_client.move_to(vc)
-    voice_client: discord.VoiceClient = discord.utils.get(bot.voice_clients, guild=guild)
-  if not voice_client.is_playing():
-    voice_client.play(audio_source, after=None)
-  else:
-    voice_client.stop()
-
-#@bot.command(name='$p')
+#@client.command(name='$p')
 #async def pokemonMiranha(ctx):
 #  if(ctx.author.id == 312555845286363136):
 #    await ctx.send("**SAI DO VÍCIO MIRANHA!**")
 #    await ctx.send(file=discord.File('charas.png'))
 
-@bot.command(name='')
-async def t(ctx):
-  await ctx.message.delete()
-  await ctx.send("**TESTE!**")
+#@client.command(name='')
+#async def t(ctx):
+#  await ctx.message.delete()
+#  await ctx.send("**TESTE!**")
 
-@bot.event
+@client.event
 async def on_message(message):
-  if message.author == bot.user:
+  if message.author == client.user:
     return
 
-  await bot.process_commands(message)
+  await client.process_commands(message)
   
   if "@everyone" in message.content:
     await message.delete()
@@ -101,4 +101,4 @@ async def on_message(message):
   #if message.author.id == 332525747749257216:
   #  await message.channel.send("**PRIMATA!**")
      
-bot.run(os.environ.get('TOKEN'))
+client.run(os.environ.get('TOKEN'))
