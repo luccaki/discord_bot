@@ -59,7 +59,7 @@ async def on_message(message):
     await message.delete()
     await message.channel.send("**PRIMATA!**")
 
-  elif "840953718312009739" in message.raw_mentions:
+  elif 840953718312009739 in message.raw_mentions:
     if "?" in message.content:
       await message.channel.send("**CALA BOCA PRIMATA!**")
     else:
