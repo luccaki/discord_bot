@@ -54,8 +54,6 @@ client = discord.Client()
 async def on_message(message):
   if message.author == client.user:
     return
-
-  await client.process_commands(message)
   
   if "@everyone" in message.content:
     await message.delete()
