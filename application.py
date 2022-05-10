@@ -6,9 +6,10 @@ import discord
 import random
 import pafy
 
-clientRunning = False
 client = discord.Client()
-        
+if __name__ == "__main__":
+  client.run(os.environ.get('TOKEN'))
+  
 #@client.command()
 #async def yt(ctx, url = "lxl388vKUmE"):
 #  #If you want to use a youtube URL
@@ -99,7 +100,3 @@ async def on_message(message):
 
   #if message.author.id == 332525747749257216:
   #  await message.channel.send("**PRIMATA!**")
-
-if __name__ == "__main__" and clientRunning == False:
-  clientRunning = True
-  client.run(os.environ.get('TOKEN'))
