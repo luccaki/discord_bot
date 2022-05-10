@@ -6,7 +6,7 @@ import discord
 import random
 import pafy
 
-running = False
+clientRunning = False
 client = discord.Client()
         
 #@client.command()
@@ -100,6 +100,6 @@ async def on_message(message):
   #if message.author.id == 332525747749257216:
   #  await message.channel.send("**PRIMATA!**")
 
-if __name__ == "__main__" and running == False:
-  running = True
+if __name__ == "__main__" and clientRunning == False:
+  clientRunning = True
   client.run(os.environ.get('TOKEN'))
