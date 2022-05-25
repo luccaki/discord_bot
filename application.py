@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # kill 1 - para resetar o replit
 # pip install pynacl
 import os
